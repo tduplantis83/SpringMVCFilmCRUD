@@ -1,7 +1,5 @@
-.DS_Store
-bin
-build
-target
-*.war
+# Ignore Gradle project-specific cache directory
 .gradle
-.classpath
+
+# Ignore Gradle build output directory
+build
