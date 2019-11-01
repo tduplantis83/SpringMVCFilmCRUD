@@ -2,7 +2,7 @@ package com.skilldistillery.film.data;
 
 import java.util.*;
 
-import ccom.skilldistillery.film.entities.*;
+import com.skilldistillery.film.entities.*;
 
 public interface DatabaseAccessor {
   public Film findFilmById(int filmId);
