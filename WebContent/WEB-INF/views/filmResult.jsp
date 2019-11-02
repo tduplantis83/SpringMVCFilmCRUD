@@ -62,12 +62,12 @@
 										class="btn btn-outline-info btn-block" data-toggle="modal"
 										data-target="#conditionInventoryModal">View Film
 										Condition & Inventory</button></td>
-								<td colspan="3"><a href="filmCreate.do">
+								<td colspan="3"><a href="filmUpdate.do">
 										<button type="button"
 											class="btn btn-outline-warning btn-block">Update
 											this Film</button>
 								</a></td>
-								<td colspan="3"><a href="filmCreate.do">
+								<td colspan="3"><a href="filmDelete.do">
 										<button type="button" class="btn btn-outline-danger btn-block">Delete
 											this Film</button>
 								</a></td>
@@ -101,11 +101,11 @@
 								</thead>
 								<tbody>
 									<tr>
-										<%-- <c:forEach var="fn" items="cast">
+										<%-- <c:forEach var="fn" items="${film.getCast() }">
 											<td>${fn.getFirstName()}</td>
 										</c:forEach>
 										
-										<c:forEach var="ln" items="cast">
+										<c:forEach var="ln" items="${film.getCast() }">
 											<td>${ln.getLastName()}</td>
 										</c:forEach> --%>
 									</tr>
