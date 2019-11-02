@@ -34,6 +34,8 @@
 							<td><strong>Special Features</strong></td>
 							<td><strong>Category</strong></td>
 							<td><strong>Description</strong></td>
+							<td><strong>Cast Name</strong></td>
+							<td><strong>Condition & Inv</strong></td>
 						</tr>
 					</thead>
 					<c:forEach var="f" items="${film}">
@@ -53,6 +55,17 @@
 								<td>${f.getSpecialFeatures()}</td>
 								<td>${f.getFilmCategory()}</td>
 								<td>${f.getDescription()}</td>
+								<td>
+								<c:forEach var="fn" items="${f.getCast() }">
+									${fn.getFirstName()} ${fn.getLastName()},
+								</c:forEach>
+								</td>
+								<td>
+								<c:forEach var="cond" items="${f.conditionCount }">
+									${cond.key}: ${cond.value }
+								</c:forEach>
+								</td>
+								
 							</tr>
 							<tr>
 								<td colspan="3"><button type="button"
