@@ -17,6 +17,11 @@
 <body>
 	<c:choose>
 		<c:when test="${fn: length(film) gt 0}">
+		<c:choose>
+			<c:when test="${updateStatus}">
+				<h2>Film Update Successful!</h2>
+			</c:when>
+		</c:choose>
 			<div class="table-responsive">
 				<table
 					class="table table-striped table-bordered table-hover text-align: center">
@@ -71,6 +76,8 @@
 										class="btn btn-outline-info btn-block" data-toggle="modal"
 										data-target="#conditionInventoryModal">View Film
 										Condition & Inventory</button></td>
+										<c:choose>
+										<c:when test="${f.id > 1000 }">
 								<td colspan="3"><form action="filmUpdate.do" method="get">
 										<button class="btn btn-outline-warning btn-block">Update
 											this Film</button>
@@ -79,7 +86,8 @@
 								<td colspan="3"><a href="filmDelete.do">
 										<button type="button" class="btn btn-outline-danger btn-block">Delete
 											this Film</button>
-								</a></td>
+										
+								</a></td></c:when></c:choose>
 							</tr>
 						</tbody>
 					</c:forEach>

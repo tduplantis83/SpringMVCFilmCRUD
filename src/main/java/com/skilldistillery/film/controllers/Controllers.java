@@ -95,18 +95,19 @@ public class Controllers {
 	@RequestMapping(path="filmUpdate.do", method=RequestMethod.POST)
 	public ModelAndView filmUpdateResult(Film film) { 
 	ModelAndView mv = new ModelAndView();
+	System.out.println(film.allDetails());
 	List<Film> f = new ArrayList<>();
 	if(dao.updateFilm(film)) {
 	f.add(film);
 	mv.addObject("film", f);
-	mv.addObject("updateStatus", "Update Completed");
+	mv.addObject("updateStatus", true);
 	mv.setViewName("WEB-INF/views/filmResult.jsp");
 	}
 	else {
 		f.add(film);
 		mv.addObject("film", film);
-		mv.addObject("updateStatus", "Update FAILED");
-		mv.setViewName("WEB-INF/views/filmResult.jsp");
+		mv.addObject("updateStatus", true);
+		mv.setViewName("WEB-INF/views/filmUpdate.jsp");
 	}
 	return mv;
 	}
