@@ -73,22 +73,6 @@ public class Controllers {
 
 	@RequestMapping(path = "filmCreate.do", method = RequestMethod.POST)
 	public ModelAndView filmResultByKeyword(Film film) {
-//	ModelAndView mv = new ModelAndView();
-//	List<Film> f = new ArrayList<>();
-//	Film filmResult = null;
-//	filmResult = dao.createFilm(film);
-//	if(filmResult != null) {
-//		f.add(filmResult);
-//		mv.addObject("createStatus", false);
-//		mv.addObject("film", f);
-//		mv.setViewName("WEB-INF/views/filmResult.jsp");
-//	}
-//	else {
-//		mv.addObject("createStatus", true);
-//		mv.setViewName("WEB-INF/views/filmCreate.jsp");
-//	}
-//	return mv;
-//	}
 		ModelAndView mv = new ModelAndView();
 		System.out.println(film.allDetails());
 		List<Film> f = new ArrayList<>();
@@ -101,8 +85,6 @@ public class Controllers {
 			mv.addObject("createStatus", false);
 			mv.setViewName("WEB-INF/views/filmResult.jsp");
 		} else {
-//			f.add(filmResult);
-//			mv.addObject("film", f);
 			mv.addObject("createStatus", true);
 			mv.setViewName("WEB-INF/views/filmCreate.jsp");
 		}
@@ -149,8 +131,6 @@ public class Controllers {
 
 	@RequestMapping(path = "filmDelete.do", params = "id", method = RequestMethod.GET)
 	public ModelAndView filmDelete(int id) {
-		System.out.println("***********Film Delete Controller Method1*******");
-
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("film", dao.findFilmById(id));
 		mv.setViewName("WEB-INF/views/filmDelete.jsp");
@@ -159,7 +139,6 @@ public class Controllers {
 
 	@RequestMapping(path = "filmDelete.do", method = RequestMethod.POST)
 	public ModelAndView filmDeleteResult(Film film) {
-		System.out.println("***********Film Delete Controller Method2*******");
 		ModelAndView mv = new ModelAndView();
 		System.out.println(film.allDetails());
 		List<Film> f = new ArrayList<>();

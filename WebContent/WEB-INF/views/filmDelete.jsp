@@ -49,6 +49,10 @@
 		<button type="submit" class="btn btn-outline-danger">Delete
 			Film</button>
 	</form:form>
+	
+	<form action="welcomePage.do" method="get">
+		<button class="btn btn-success">Back to Home</button>
+	</form>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
