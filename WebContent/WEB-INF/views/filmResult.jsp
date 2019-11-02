@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,8 @@
 	<c:choose>
 		<c:when test="${fn: length(film) gt 0}">
 			<div class="table-responsive">
-				<table class="table table-striped table-bordered table-hover text-align: center">
+				<table
+					class="table table-striped table-bordered table-hover text-align: center">
 					<thead class="table-dark text-center">
 						<tr>
 							<td><strong>Film ID</strong></td>
@@ -43,13 +44,15 @@
 								<td>${f.getReleaseYear()}</td>
 								<td>${f.getLanguage()}</td>
 								<td>${f.getRentalDuration()}</td>
-								<td><fmt:formatNumber value="${f.getRentalRate()}" type = "currency"/></td>
+								<td><fmt:formatNumber value="${f.getRentalRate()}"
+										type="currency" /></td>
 								<td>${f.getLength()}</td>
-								<td><fmt:formatNumber value="${f.getReplacementCost()}" type="currency"/></td>
+								<td><fmt:formatNumber value="${f.getReplacementCost()}"
+										type="currency" /></td>
 								<td>${f.getRating()}</td>
 								<td>${f.getSpecialFeatures()}</td>
 								<td>${f.getFilmCategory()}</td>
-								<td colspan="4">${f.getDescription()}</td>
+								<td>${f.getDescription()}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -85,7 +88,94 @@
 						</tr>
 					</tbody>
 				</table> --%>
+			<button type="button" class="btn btn-primary" data-toggle="modal"
+				data-target="#filmCastModal">View Film Cast</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal"
+				data-target="#conditionInventoryModal">View Film Condition & Inventory</button>
 
+			<!-- Modal -->
+			<div class="modal fade" id="filmCastModal" tabindex="-1"
+				role="dialog" aria-labelledby="FilmCast"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="filmCastModal">Film Cast</h5>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<table>
+								<thead>
+									<tr>
+										<td><strong>First Name</strong></td>
+										<td><strong>Last Name</strong></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<%-- <c:forEach var="fn" items="cast">
+											<td>${fn.getFirstName()}</td>
+										</c:forEach>
+										
+										<c:forEach var="ln" items="cast">
+											<td>${ln.getLastName()}</td>
+										</c:forEach> --%>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="conditionInventoryModal" tabindex="-1"
+				role="dialog" aria-labelledby="FilmCast"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="conditionInventoryModal">Film Condition & Inventory</h5>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<table>
+								<thead>
+									<tr>
+										<td><strong>Condition</strong></td>
+										<td><strong>Inventory</strong></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<c:forEach var="fn" items="${f.getConditionCount()}">
+											<td>${fn.key}</td>
+										</c:forEach>
+										
+										<c:forEach var="ln" items="${f.getCast()}">
+											<td>${ln.value()}</td>
+										</c:forEach>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</c:when>
 		<c:otherwise>
 			<h2>No Matching Film</h2>
