@@ -54,49 +54,31 @@
 								<td>${f.getFilmCategory()}</td>
 								<td>${f.getDescription()}</td>
 							</tr>
+							<tr>
+								<td colspan="3"><button type="button"
+										class="btn btn-outline-info btn-block" data-toggle="modal"
+										data-target="#filmCastModal">View Film Cast</button></td>
+								<td colspan="3"><button type="button"
+										class="btn btn-outline-info btn-block" data-toggle="modal"
+										data-target="#conditionInventoryModal">View Film
+										Condition & Inventory</button></td>
+								<td colspan="3"><button type="button"
+										class="btn btn-outline-warning btn-block" data-toggle="modal"
+										data-target="filmUpdate.do">Update this Film</button></td>
+								<td colspan="3"><button type="button"
+										class="btn btn-outline-danger btn-block" data-toggle="modal"
+										data-target="filmDelete.do">Delete this Film</button></td>
+							</tr>
 						</tbody>
 					</c:forEach>
 				</table>
 			</div>
-			<%-- <table>
-					<thead>
-						<tr>
-							<td><strong>Cast First Name</strong></td>
-							<td><strong>Cast Last Name</strong></td>
-							<td><strong>Condition</strong></td>
-							<td><strong>Number In Inventory</strong></td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<c:forEach var="c" items="${f.getCast()}">
-								<td>${c.getFirstName()}</td>
-							</c:forEach>
-							<c:forEach var="c" items="${f.getCast()}">
-								<td>${c.getLastName()}</td>
-							</c:forEach>
-						</tr>
-						<tr>
-							<c:forEach var="cond" items="${f.getConditionCount()}">
-								<td>${cond.key}</td>
-							</c:forEach>
-						</tr>
-						<tr>
-							<c:forEach var="inv" items="${f.getConditionCount()}">
-								<td>${inv.value}</td>
-							</c:forEach>
-						</tr>
-					</tbody>
-				</table> --%>
-			<button type="button" class="btn btn-primary" data-toggle="modal"
-				data-target="#filmCastModal">View Film Cast</button>
-			<button type="button" class="btn btn-primary" data-toggle="modal"
-				data-target="#conditionInventoryModal">View Film Condition & Inventory</button>
+			
+
 
 			<!-- Modal -->
 			<div class="modal fade" id="filmCastModal" tabindex="-1"
-				role="dialog" aria-labelledby="FilmCast"
-				aria-hidden="true">
+				role="dialog" aria-labelledby="FilmCast" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -134,15 +116,15 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<!-- Modal -->
 			<div class="modal fade" id="conditionInventoryModal" tabindex="-1"
-				role="dialog" aria-labelledby="FilmCast"
-				aria-hidden="true">
+				role="dialog" aria-labelledby="FilmCast" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="conditionInventoryModal">Film Condition & Inventory</h5>
+							<h5 class="modal-title" id="conditionInventoryModal">Film
+								Condition & Inventory</h5>
 							<button type="button" class="close" data-dismiss="modal"
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
@@ -161,7 +143,7 @@
 										<c:forEach var="fn" items="${f.getConditionCount()}">
 											<td>${fn.key}</td>
 										</c:forEach>
-										
+
 										<c:forEach var="ln" items="${f.getCast()}">
 											<td>${ln.value()}</td>
 										</c:forEach>
