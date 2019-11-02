@@ -45,8 +45,14 @@ public class Controllers {
 	public ModelAndView filmResultByID(int id) { 
 		ModelAndView mv = new ModelAndView();
 		List<Film> f = new ArrayList<>();
-		f.add(dao.findFilmById(id));
+		Film filmresult = new Film();
+		filmresult = dao.findFilmById(id);
+		if(filmresult != null) {
+			f.add(dao.findFilmById(id));
+		}
 		mv.addObject("film", f);
+		mv.addObject("deleteStatus", false);
+		mv.addObject("updateStatus", false);
 		mv.setViewName("WEB-INF/views/filmResult.jsp");
 		return mv;
 	}
@@ -67,19 +73,49 @@ public class Controllers {
 	
 	@RequestMapping(path="filmCreate.do", method=RequestMethod.POST)
 	public ModelAndView filmResultByKeyword(Film film) { 
-	ModelAndView mv = new ModelAndView();
-	List<Film> f = new ArrayList<>();
-	f.add(dao.createFilm(film));
-	mv.addObject("film", f);
-	mv.setViewName("WEB-INF/views/filmResult.jsp");
-	return mv;
-	}
+//	ModelAndView mv = new ModelAndView();
+//	List<Film> f = new ArrayList<>();
+//	Film filmResult = null;
+//	filmResult = dao.createFilm(film);
+//	if(filmResult != null) {
+//		f.add(filmResult);
+//		mv.addObject("createStatus", false);
+//		mv.addObject("film", f);
+//		mv.setViewName("WEB-INF/views/filmResult.jsp");
+//	}
+//	else {
+//		mv.addObject("createStatus", true);
+//		mv.setViewName("WEB-INF/views/filmCreate.jsp");
+//	}
+//	return mv;
+//	}
+		ModelAndView mv = new ModelAndView();
+		System.out.println(film.allDetails());
+		List<Film> f = new ArrayList<>();
+		Film filmResult = dao.createFilm(film);
+		if(filmResult != null) {
+			System.out.println(filmResult.allDetails());
+			f.add(filmResult);
+			mv.addObject("film", f);
+			mv.addObject("createStatus", false);
+			mv.setViewName("WEB-INF/views/filmResult.jsp");
+		}
+		else {
+			f.add(filmResult);
+			mv.addObject("film", f);
+			mv.addObject("createStatus", true);
+			mv.setViewName("WEB-INF/views/filmCreate.jsp");
+		}
+		return mv;
+		}
 	
 	@RequestMapping(path="filmByKeyword.do", method=RequestMethod.GET)
 	public ModelAndView filmResultByKeyword(String keyword) { 
 	ModelAndView mv = new ModelAndView();
 	List<Film> f = dao.findFilmsByKeyword(keyword);
 	mv.addObject("film", f);
+	mv.addObject("deleteStatus", false);
+	mv.addObject("updateStatus", false);
 	mv.setViewName("WEB-INF/views/filmResult.jsp");
 	return mv;
 	}

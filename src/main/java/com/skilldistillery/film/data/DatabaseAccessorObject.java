@@ -336,7 +336,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
-
+			f = null;
 			// if error, rollback transaction
 			if (conn != null) {
 				try {

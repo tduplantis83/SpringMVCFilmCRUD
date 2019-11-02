@@ -17,16 +17,6 @@
 <body>
 	<c:choose>
 		<c:when test="${fn: length(film) gt 0}">
-			<c:choose>
-				<c:when test="${updateStatus}">
-					<h2>Film Update Successful!</h2>
-				</c:when>
-			</c:choose>
-			<c:choose>
-				<c:when test="${deleteStatus}">
-					<h2>Film Delete Successful!</h2>
-				</c:when>
-			</c:choose>
 			<div class="table-responsive">
 				<table
 					class="table table-striped table-bordered table-hover text-align: center">
@@ -186,11 +176,25 @@
 				</div>
 			</div>
 		</c:when>
+		<c:when test="${deleteStatus}">
+			<h2>Film Delete Successful!</h2>
+		</c:when>
 		<c:otherwise>
-			<h2>No Matching Film</h2>
+			<h2>No Matching Film Found</h2>
 		</c:otherwise>
-
 	</c:choose>
+	
+	<c:choose>
+		<c:when test="${updateStatus}">
+			<h2>Film Update Successful!</h2>
+		</c:when>
+	</c:choose>
+	<%-- <c:choose>
+		<c:when test="${deleteStatus}">
+			<h2>Film Delete Successful!</h2>
+		</c:when>
+	</c:choose> --%>
+	
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
