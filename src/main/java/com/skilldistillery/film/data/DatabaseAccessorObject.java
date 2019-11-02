@@ -306,7 +306,9 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			if (rowsCreated == 1) {
 				rs = stmt.getGeneratedKeys();
 				if (rs.next()) {
+		
 					int newFilmId = rs.getInt(1); // get the id of the film created
+					System.out.println("***************NEW FILM ID" + newFilmId);
 					f.setId(newFilmId); // set the new film id to the new film object to match the DB
 
 //					//set film_category
@@ -325,9 +327,9 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			} else {
 				f = null;
 			}
+			conn.commit();
 
 			// commit transaction
-			conn.commit();
 
 			// close connections
 			conn.close();
@@ -346,7 +348,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				}
 			}
 			throw new RuntimeException("Error inserting film " + f);
-		}
+		} 
 
 		return f;
 	}

@@ -21,29 +21,31 @@
 	<form:form action="filmCreate.do" method="POST">
 		<div class="form-group">
 			<label for="title">Title</label> <input type="text" name="title"
-				class="form-control" placeholder="Title"> <br> <label
-				for="desc">Description</label> <input type="text" name="description"
-				class="form-control" placeholder="Description"> <br> <label
-				for="releaseYear">Release Year</label> <input type="text"
-				name="releaseYear" class="form-control" placeholder="Release Year">
-			<br> <label for="languageId">Language ID (1-6)</label> <input
-				type="text" name="languageId" class="form-control"
-				placeholder="Language ID Number (1-6)"> <br> <label
-				for="rentalDuration">Rental Duration</label> <input type="text"
-				name="rentalDuration" class="form-control"
-				placeholder="Rental Duration"> <br> <label
-				for="rentalRate">Rental Rate</label> <input type="text"
-				name="rentalRate" class="form-control" placeholder="Rental Rate">
-			<br> <label for="length">Length</label> <input type="text"
-				name="length" class="form-control" placeholder="Length"> <br>
-			<label for="replacementCost">Replacement Cost</label> <input
-				type="text" name="replacementCost" class="form-control"
-				placeholder="Replacement Cost"> <br> <label
+				class="form-control" placeholder="Title" required="required">
+			<br> <label for="desc">Description</label> <input type="text"
+				name="description" class="form-control" placeholder="Description"
+				required="required"> <br> <label for="releaseYear">Release
+				Year</label> <input type="text" name="releaseYear" class="form-control"
+				placeholder="Release Year" required="required"> <br> <label
+				for="languageId">Language ID (1-6)</label> <input type="text"
+				name="languageId" class="form-control"
+				placeholder="Language ID Number (1-6)" required="required">
+			<br> <label for="rentalDuration">Rental Duration</label> <input
+				type="text" name="rentalDuration" class="form-control"
+				placeholder="Rental Duration" required="required"> <br>
+			<label for="rentalRate">Rental Rate</label> <input type="text"
+				name="rentalRate" class="form-control" placeholder="Rental Rate"
+				required="required"> <br> <label for="length">Length</label>
+
+			<input type="text" name="length" class="form-control"
+				placeholder="Length" required="required"> <br> <label for="replacementCost">Replacement
+				Cost</label> <input type="text" name="replacementCost" class="form-control"
+				placeholder="Replacement Cost" required="required"> <br> <label
 				for="rating">Rating</label> <input type="text" name="rating"
-				class="form-control" placeholder="Rating"> <br> <label
+				class="form-control" placeholder="Rating" required="required"> <br> <label
 				for="specialFeatures">Special Features</label> <input type="text"
 				name="specialFeatures" class="form-control"
-				placeholder="Special Features">
+				placeholder="Special Features" required="required">
 		</div>
 		<button type="submit" class="btn btn-primary">Create</button>
 	</form:form>
