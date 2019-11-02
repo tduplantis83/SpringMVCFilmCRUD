@@ -62,18 +62,21 @@
 										class="btn btn-outline-info btn-block" data-toggle="modal"
 										data-target="#conditionInventoryModal">View Film
 										Condition & Inventory</button></td>
-								<td colspan="3"><button type="button"
-										class="btn btn-outline-warning btn-block" data-toggle="modal"
-										data-target="filmUpdate.do">Update this Film</button></td>
-								<td colspan="3"><button type="button"
-										class="btn btn-outline-danger btn-block" data-toggle="modal"
-										data-target="filmDelete.do">Delete this Film</button></td>
+								<td colspan="3"><a href="filmCreate.do">
+										<button type="button"
+											class="btn btn-outline-warning btn-block">Update
+											this Film</button>
+								</a></td>
+								<td colspan="3"><a href="filmCreate.do">
+										<button type="button" class="btn btn-outline-danger btn-block">Delete
+											this Film</button>
+								</a></td>
 							</tr>
 						</tbody>
 					</c:forEach>
 				</table>
 			</div>
-			
+
 
 
 			<!-- Modal -->

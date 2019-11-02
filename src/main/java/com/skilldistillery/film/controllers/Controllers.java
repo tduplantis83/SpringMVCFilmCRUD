@@ -83,4 +83,22 @@ public class Controllers {
 	mv.setViewName("WEB-INF/views/filmResult.jsp");
 	return mv;
 	}
+	
+	@RequestMapping(path="filmUpdate.do")
+	public ModelAndView filmUpdate() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/filmUpdate.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path="filmUpdate.do", method=RequestMethod.POST)
+	public ModelAndView filmUpdate(Film film) { 
+	ModelAndView mv = new ModelAndView();
+	Boolean updateComplete = false;
+	updateComplete = dao.updateFilm(film);
+	mv.addObject("film", film);
+	mv.addObject("updateComplete", updateComplete);
+	mv.setViewName("WEB-INF/views/filmResult.jsp");
+	return mv;
+	}
 }
