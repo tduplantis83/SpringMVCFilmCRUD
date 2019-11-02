@@ -111,4 +111,35 @@ public class Controllers {
 	}
 	return mv;
 	}
+	
+	@RequestMapping(path="filmDelete.do", params="id", method=RequestMethod.GET)
+	public ModelAndView filmDelete(int id) {
+		System.out.println("***********Film Delete Controller Method1*******");
+
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("film", dao.findFilmById(id));
+		mv.setViewName("WEB-INF/views/filmDelete.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path="filmDelete.do", method=RequestMethod.POST)
+	public ModelAndView filmDeleteResult(Film film) { 
+	System.out.println("***********Film Delete Controller Method2*******");
+	ModelAndView mv = new ModelAndView();
+	System.out.println(film.allDetails());
+	List<Film> f = new ArrayList<>();
+	if(dao.deleteFilm(film)) {
+	mv.addObject("film", f);
+	mv.addObject("deleteStatus", true);
+	mv.setViewName("WEB-INF/views/filmResult.jsp");
+	}
+	else {
+		f.add(film);
+		mv.addObject("film", film);
+		mv.addObject("deleteStatus", true);
+		mv.setViewName("WEB-INF/views/filmResult.jsp");
+	}
+	return mv;
+	}
+
 }
