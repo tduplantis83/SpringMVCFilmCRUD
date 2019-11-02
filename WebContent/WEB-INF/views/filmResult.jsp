@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,30 +14,85 @@
 <title>Film Results</title>
 </head>
 <body>
-<c:choose>
-<c:when test="${fn: length(film) gt 0}">
-	<c:forEach var="f" items="${film}">
-	<table>
-	<thead>
-	<tr>
-	<td>Title</td>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	  <td>${f.title}</td>
-	</tr>
-	</tbody>
-	</table>
-</c:forEach>
-</c:when>
-<c:otherwise>
-	<h2>No Matching Film</h2>
-</c:otherwise>
+	<c:choose>
+		<c:when test="${fn: length(film) gt 0}">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover">
+					<thead class=table-dark>
+						<tr>
+							<td><strong>Film ID</strong></td>
+							<td><strong>Title</strong></td>
+							<td><strong>Description</strong></td>
+							<td><strong>Release Year</strong></td>
+							<td><strong>Language</strong></td>
+							<td><strong>Rental Duration</strong></td>
+							<td><strong>Rental Rate</strong></td>
+							<td><strong>Length</strong></td>
+							<td><strong>Replacement Cost</strong></td>
+							<td><strong>Rating</strong></td>
+							<td><strong>Special Features</strong></td>
+							<td><strong>Category</strong></td>
+						</tr>
+					</thead>
+					<c:forEach var="f" items="${film}">
+						<tbody>
+							<tr>
+								<td>${f.getId()}</td>
+								<td>${f.getTitle()}</td>
+								<td>${f.getDescription()}</td>
+								<td>${f.getReleaseYear()}</td>
+								<td>${f.getLanguage()}</td>
+								<td>${f.getRentalDuration()}</td>
+								<td>${f.getRentalRate()}</td>
+								<td>${f.getLength()}</td>
+								<td>${f.getReplacementCost()}</td>
+								<td>${f.getRating()}</td>
+								<td>${f.getSpecialFeatures()}</td>
+								<td>${f.getFilmCategory()}</td>
+							</tr>
+						</tbody>
+					</c:forEach>
+				</table>
+			</div>
+			<%-- <table>
+					<thead>
+						<tr>
+							<td><strong>Cast First Name</strong></td>
+							<td><strong>Cast Last Name</strong></td>
+							<td><strong>Condition</strong></td>
+							<td><strong>Number In Inventory</strong></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<c:forEach var="c" items="${f.getCast()}">
+								<td>${c.getFirstName()}</td>
+							</c:forEach>
+							<c:forEach var="c" items="${f.getCast()}">
+								<td>${c.getLastName()}</td>
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach var="cond" items="${f.getConditionCount()}">
+								<td>${cond.key}</td>
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach var="inv" items="${f.getConditionCount()}">
+								<td>${inv.value}</td>
+							</c:forEach>
+						</tr>
+					</tbody>
+				</table> --%>
 
-</c:choose>
+		</c:when>
+		<c:otherwise>
+			<h2>No Matching Film</h2>
+		</c:otherwise>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	</c:choose>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
 	<script
