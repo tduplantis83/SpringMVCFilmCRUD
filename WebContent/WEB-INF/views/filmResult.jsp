@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,21 +11,33 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<title>Spring MVC Film App</title>
+<title>Film Results</title>
 </head>
 <body>
+<c:choose>
+<c:when test="${fn: length(film) gt 0}">
+	<c:forEach var="f" items="${film}">
+	<table>
+	<thead>
+	<tr>
+	<td>Title</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	  <td>${f.title}</td>
+	</tr>
+	</tbody>
+	</table>
+</c:forEach>
+</c:when>
+<c:otherwise>
+	<h2>No Matching Film</h2>
+</c:otherwise>
 
-	<a href="filmLookup.do">
-		<button type="button" class="btn btn-outline-primary">Film
-			Lookup</button>
-	</a>
-	<a href="filmCreate.do">
-		<button type="button" class="btn btn-outline-primary">Add A Film</button>
-	</a>
+</c:choose>
 
-
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
 	<script

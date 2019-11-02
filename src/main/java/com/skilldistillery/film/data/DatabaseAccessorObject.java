@@ -1,14 +1,25 @@
 package com.skilldistillery.film.data;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import com.skilldistillery.film.entities.*;
+import org.springframework.stereotype.Component;
 
+import com.skilldistillery.film.entities.Actor;
+import com.skilldistillery.film.entities.Film;
+@Component
 public class DatabaseAccessorObject implements DatabaseAccessor {
 
 	// string to connect to the database
-	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false";
+	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
 	private static final String userPass = "student";
 
 	static {

@@ -8,20 +8,18 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<title>Spring MVC Film App</title>
+<title>Film Lookup</title>
 </head>
 <body>
 
-	<a href="filmLookup.do">
-		<button type="button" class="btn btn-outline-primary">Film
-			Lookup</button>
+<a href="filmLookupByID.do">
+		<button type="button" class="btn btn-outline-primary">Lookup by ID</button>
 	</a>
-	<a href="filmCreate.do">
-		<button type="button" class="btn btn-outline-primary">Add A Film</button>
+	
+	<a href="filmLookupByKeyword.do">
+		<button type="button" class="btn btn-outline-primary">Lookup by Keyword(s)</button>
 	</a>
-
-
-
+	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>

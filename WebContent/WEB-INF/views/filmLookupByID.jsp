@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,21 +10,19 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<title>Spring MVC Film App</title>
+<title>Film Lookup by ID</title>
 </head>
 <body>
 
-	<a href="filmLookup.do">
-		<button type="button" class="btn btn-outline-primary">Film
-			Lookup</button>
-	</a>
-	<a href="filmCreate.do">
-		<button type="button" class="btn btn-outline-primary">Add A Film</button>
-	</a>
+<form:form action="filmByID.do" method="GET">
+  <div class="form-group">
+    <label for="filmID">Film ID</label>
+    <input type="text" name="id" class="form-control" placeholder="Enter FilmID">
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form:form>
 
-
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
 	<script
