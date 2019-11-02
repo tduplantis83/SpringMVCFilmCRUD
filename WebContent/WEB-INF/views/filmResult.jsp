@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,12 +18,11 @@
 	<c:choose>
 		<c:when test="${fn: length(film) gt 0}">
 			<div class="table-responsive">
-				<table class="table table-striped table-bordered table-hover">
-					<thead class=table-dark>
+				<table class="table table-striped table-bordered table-hover text-align: center">
+					<thead class="table-dark text-center">
 						<tr>
 							<td><strong>Film ID</strong></td>
 							<td><strong>Title</strong></td>
-							<td><strong>Description</strong></td>
 							<td><strong>Release Year</strong></td>
 							<td><strong>Language</strong></td>
 							<td><strong>Rental Duration</strong></td>
@@ -32,6 +32,7 @@
 							<td><strong>Rating</strong></td>
 							<td><strong>Special Features</strong></td>
 							<td><strong>Category</strong></td>
+							<td><strong>Description</strong></td>
 						</tr>
 					</thead>
 					<c:forEach var="f" items="${film}">
@@ -39,16 +40,16 @@
 							<tr>
 								<td>${f.getId()}</td>
 								<td>${f.getTitle()}</td>
-								<td>${f.getDescription()}</td>
 								<td>${f.getReleaseYear()}</td>
 								<td>${f.getLanguage()}</td>
 								<td>${f.getRentalDuration()}</td>
-								<td>${f.getRentalRate()}</td>
+								<td><fmt:formatNumber value="${f.getRentalRate()}" type = "currency"/></td>
 								<td>${f.getLength()}</td>
-								<td>${f.getReplacementCost()}</td>
+								<td><fmt:formatNumber value="${f.getReplacementCost()}" type="currency"/></td>
 								<td>${f.getRating()}</td>
 								<td>${f.getSpecialFeatures()}</td>
 								<td>${f.getFilmCategory()}</td>
+								<td colspan="4">${f.getDescription()}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
