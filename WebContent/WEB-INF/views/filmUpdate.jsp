@@ -14,37 +14,37 @@
 </head>
 <body>
 			
-<form:form action="filmUpdate.do" method="POST">
+<form:form action="filmUpdate.do" method="POST" items="${film}">
   <div class="form-group">
     <label for="title">Title</label>
-    <input type="text" name="title" class="form-control" placeholder="Title">
+    <input type="text" name="title" class="form-control" placeholder="${film.title}">
  	<br>
     <label for="desc">Description</label>
-    <input type="text" name="description" class="form-control" placeholder="Description">
+    <input type="text" name="description" class="form-control" placeholder="${film.description}">
  	<br>
     <label for="releaseYear">Release Year</label>
-    <input type="text" name="releaseYear" class="form-control" placeholder="Release Year">
+    <input type="text" name="releaseYear" class="form-control" placeholder="${film.releaseYear}">
  	<br>
     <label for="languageId">Language ID (1-6)</label>
-    <input type="text" name="languageId" class="form-control" placeholder="Language ID Number (1-6)">
+    <input type="text" name="languageId" class="form-control" placeholder="${film.description}">
  	<br>
     <label for="rentalDuration">Rental Duration</label>
-    <input type="text" name="rentalDuration" class="form-control" placeholder="Rental Duration">
+    <input type="text" name="rentalDuration" class="form-control" placeholder="${film.rentalDuration}">
  	<br>
     <label for="rentalRate">Rental Rate</label>
-    <input type="text" name="rentalRate" class="form-control" placeholder="Rental Rate">
+    <input type="text" name="rentalRate" class="form-control" placeholder="${film.rentalRate}">
  	<br>
     <label for="length">Length</label>
-    <input type="text" name="length" class="form-control" placeholder="Length">
+    <input type="text" name="length" class="form-control" placeholder="${film.length}">
  	<br>
     <label for="replacementCost">Replacement Cost</label>
-    <input type="text" name="replacementCost" class="form-control" placeholder="Replacement Cost">
+    <input type="text" name="replacementCost" class="form-control" placeholder="${film.replacementCost}">
  	<br>
     <label for="rating">Rating</label>
-    <input type="text" name="rating" class="form-control" placeholder="Rating">
+    <input type="text" name="rating" class="form-control" placeholder="${film.rating}">
  	<br>
     <label for="specialFeatures">Special Features</label>
-    <input type="text" name="specialFeatures" class="form-control" placeholder="Special Features">
+    <input type="text" name="specialFeatures" class="form-control" placeholder="${film.specialFeatures}">
   </div>
   <button type="submit" class="btn btn-outline-warning">Update Film</button>
 </form:form>

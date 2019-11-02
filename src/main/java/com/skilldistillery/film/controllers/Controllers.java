@@ -84,15 +84,16 @@ public class Controllers {
 	return mv;
 	}
 	
-	@RequestMapping(path="filmUpdate.do")
-	public ModelAndView filmUpdate() {
+	@RequestMapping(path="filmUpdate.do", params="id", method=RequestMethod.GET)
+	public ModelAndView filmUpdate(int id) {
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("film", dao.findFilmById(id));
 		mv.setViewName("WEB-INF/views/filmUpdate.jsp");
 		return mv;
 	}
 	
 	@RequestMapping(path="filmUpdate.do", method=RequestMethod.POST)
-	public ModelAndView filmUpdate(Film film) { 
+	public ModelAndView filmUpdateResult(Film film) { 
 	ModelAndView mv = new ModelAndView();
 	Boolean updateComplete = false;
 	updateComplete = dao.updateFilm(film);

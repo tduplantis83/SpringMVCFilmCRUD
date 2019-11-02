@@ -55,17 +55,13 @@
 								<td>${f.getSpecialFeatures()}</td>
 								<td>${f.getFilmCategory()}</td>
 								<td>${f.getDescription()}</td>
-								<td>
-								<c:forEach var="fn" items="${f.getCast() }">
+								<td><c:forEach var="fn" items="${f.getCast() }">
 									${fn.getFirstName()} ${fn.getLastName()},
-								</c:forEach>
-								</td>
-								<td>
-								<c:forEach var="cond" items="${f.conditionCount }">
+								</c:forEach></td>
+								<td><c:forEach var="cond" items="${f.conditionCount }">
 									${cond.key}: ${cond.value }
-								</c:forEach>
-								</td>
-								
+								</c:forEach></td>
+
 							</tr>
 							<tr>
 								<td colspan="3"><button type="button"
@@ -75,11 +71,11 @@
 										class="btn btn-outline-info btn-block" data-toggle="modal"
 										data-target="#conditionInventoryModal">View Film
 										Condition & Inventory</button></td>
-								<td colspan="3"><a href="filmUpdate.do">
-										<button type="button"
-											class="btn btn-outline-warning btn-block">Update
+								<td colspan="3"><form action="filmUpdate.do" method="get">
+										<button class="btn btn-outline-warning btn-block">Update
 											this Film</button>
-								</a></td>
+										<input type="hidden" name="id" value="${f.id}">
+									</form></td>
 								<td colspan="3"><a href="filmDelete.do">
 										<button type="button" class="btn btn-outline-danger btn-block">Delete
 											this Film</button>
