@@ -53,20 +53,17 @@
 								<td>${f.getFilmCategory()}</td>
 							</tr>
 							<tr>
-								<td colspan="1"></td>
-								<td colspan="1"><strong>Description: </strong></td>
+								<td colspan="2"><strong>Description: </strong></td>
 								<td colspan="10">${f.getDescription()}</td>
 							</tr>
 							<tr>
-								<td colspan="1"></td>
-								<td colspan="1"><strong>Cast: </strong></td>
+								<td colspan="2"><strong>Cast: </strong></td>
 								<td colspan="10"><c:forEach var="c" items="${f.getCast() }">
 									${c.getFirstName()} ${c.getLastName()},
 								</c:forEach></td>
 							</tr>
 							<tr>
-								<td colspan="1"></td>
-								<td colspan="1"><strong>Condition & Inv: </strong></td>
+								<td colspan="2"><strong>Condition & Inventory: </strong></td>
 								<td colspan="10"><c:forEach var="cond"
 										items="${f.getConditionCount() }">
 									${cond.key}: ${cond.value},
@@ -76,18 +73,32 @@
 						<tfoot>
 							<tr>
 								<c:choose>
-									<c:when test="${f.id > 1000 }">
+									<c:when test="${f.id < 1000 }">
+										<td colspan="5"></td>
 										<td colspan="3"><form action="filmUpdate.do" method="get">
-												<button class="btn btn-outline-warning btn-block">Update
+												<button class="btn btn-outline-warning btn-block btn-lg" disabled>Update
 													this Film</button>
 												<input type="hidden" name="id" value="${f.id}">
 											</form></td>
 										<td colspan="3"><form action="filmDelete.do" method="get">
-												<button class="btn btn-outline-danger btn-block">Delete
+												<button class="btn btn-outline-danger btn-block btn-lg" disabled>Delete
 													this Film</button>
 												<input type="hidden" name="id" value="${f.id}">
 											</form></td>
 									</c:when>
+									<c:otherwise>
+										<td colspan="5"></td>
+										<td colspan="3"><form action="filmUpdate.do" method="get">
+												<button class="btn btn-outline-warning btn-block btn-lg">Update
+													this Film</button>
+												<input type="hidden" name="id" value="${f.id}">
+											</form></td>
+										<td colspan="3"><form action="filmDelete.do" method="get">
+												<button class="btn btn-outline-danger btn-block btn-lg">Delete
+													this Film</button>
+												<input type="hidden" name="id" value="${f.id}">
+											</form></td>
+									</c:otherwise>
 								</c:choose>
 							</tr>
 						</tfoot>
@@ -111,7 +122,7 @@
 	</c:choose>
 
 	<form action="welcomePage.do" method="get">
-		<button class="btn btn-success">Back to Home</button>
+		<button class="btn btn-success btn-lg">Back to Home</button>
 	</form>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
