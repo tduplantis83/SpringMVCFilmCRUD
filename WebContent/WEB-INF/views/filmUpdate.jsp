@@ -43,7 +43,7 @@
 							for="releaseYear">Release Year</label> <input type="text"
 							name="releaseYear" class="form-control"
 							value="${film.releaseYear}"> <br> <label
-							for="languageId">Language ID (1-6)</label> <input type="text"
+							for="languageId">Language</label> <input type="text"
 							name="languageId" class="form-control" value="${film.languageId}">
 						<br> <label for="rentalDuration">Rental Duration</label> <input
 							type="text" name="rentalDuration" class="form-control"
@@ -57,9 +57,13 @@
 							value="${film.replacementCost}"> <br> <label
 							for="rating">Rating</label> <input type="text" name="rating"
 							class="form-control" value="${film.rating}"> <br> <label
-							for="specialFeatures">Special Features</label> <input type="text"
-							name="specialFeatures" class="form-control"
-							value="${film.specialFeatures}">
+							for="specialFeatures">Special Features</label><select multiple
+							class="form-control" id="specialFeatures" name="specialFeatures">
+							<option>Trailers</option>
+							<option>Commentaries</option>
+							<option>Deleted Scenes</option>
+							<option>Behind the Scenes</option>
+							</select>					
 					</div>
 					<button type="submit"
 						class="btn btn-outline-warning btn-block btn-lg">Update
