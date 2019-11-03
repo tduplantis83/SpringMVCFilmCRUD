@@ -1,15 +1,14 @@
 @charset "UTF-8";
 
 h1 {
-	color: aqua;
+	color: red;
 	text-align: center;
 	padding-top: 15%;
 	font-family: "Lucida Console", Monaco, monospace;
 }
 
 body {
-	background-image:
-		url("https://templated.co/items/demos/hielo/images/pic03.jpg");
+	background-image: url("movietheater.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	

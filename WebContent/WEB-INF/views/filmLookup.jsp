@@ -12,19 +12,45 @@
 <title>Film Lookup</title>
 </head>
 <body>
-<h1>Film Lookup</h1>
-<a href="filmLookupByID.do">
-		<button type="button" class="btn btn-outline-primary btn-block btn-lg">Lookup by ID</button>
-	</a>
-	
-	<a href="filmLookupByKeyword.do">
-		<button type="button" class="btn btn-outline-primary btn-block btn-lg">Lookup by Keyword(s)</button>
-	</a>
-	
-	<form action="welcomePage.do" method="get">
-		<button class="btn btn-success btn-block">Back to Home</button>
-	</form>
-	
+	<h1>Film Lookup</h1>
+	<div class=container>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<form action="filmLookupByID.do" method="get">
+					<button class="btn btn-primary btn-block btn-lg">Lookup by
+						ID</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-3"></div>
+		<br>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<form action="filmLookupByKeyword.do" method="get">
+					<button class="btn btn-primary btn-block btn-lg">Lookup by
+						Keyword(s)</button>
+				</form>
+			</div>
+
+		</div>
+		<div class="col-3"></div>
+		<br>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<form action="welcomePage.do" method="get">
+					<button class="btn btn-success btn-block btn-lg">Back to
+						Home</button>
+				</form>
+			</div>
+
+		</div>
+		<div class="col-3"></div>
+	</div>
+
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>

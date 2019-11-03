@@ -12,16 +12,33 @@
 <title>Spring MVC Film App</title>
 </head>
 <body>
-<h1>Spring MVC Film App</h1><br>
+<br>
+	<h1>Spring MVC Film App</h1>
+	<br>
+	<div class=container>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<form action="filmLookup.do" method="get">
+					<button class="btn btn-primary btn-block btn-lg">Film
+						Lookup</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-3"></div>
+		<br>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<form action="filmCreate.do" method="get">
+					<button class="btn btn-primary btn-block btn-lg">Add A
+						Film</button>
+				</form>
+			</div>
 
-	<a href="filmLookup.do">
-		<button type="button" class="btn btn-outline-primary btn-block btn-lg">Film
-			Lookup</button>
-	</a>
-	<a href="filmCreate.do">
-		<button type="button" class="btn btn-outline-primary btn-block btn-lg">Add A Film</button>
-	</a>
-
+		</div>
+		<div class="col-3"></div>
+	</div>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
