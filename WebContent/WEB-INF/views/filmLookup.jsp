@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="master.css">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -11,17 +12,17 @@
 <title>Film Lookup</title>
 </head>
 <body>
-
+<h1>Film Lookup</h1>
 <a href="filmLookupByID.do">
-		<button type="button" class="btn btn-outline-primary">Lookup by ID</button>
+		<button type="button" class="btn btn-outline-primary btn-block btn-lg">Lookup by ID</button>
 	</a>
 	
 	<a href="filmLookupByKeyword.do">
-		<button type="button" class="btn btn-outline-primary">Lookup by Keyword(s)</button>
+		<button type="button" class="btn btn-outline-primary btn-block btn-lg">Lookup by Keyword(s)</button>
 	</a>
 	
 	<form action="welcomePage.do" method="get">
-		<button class="btn btn-success">Back to Home</button>
+		<button class="btn btn-success btn-block">Back to Home</button>
 	</form>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

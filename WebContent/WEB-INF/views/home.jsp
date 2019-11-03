@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="master.css">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -11,13 +12,14 @@
 <title>Spring MVC Film App</title>
 </head>
 <body>
+<h1>Spring MVC Film App</h1><br>
 
 	<a href="filmLookup.do">
-		<button type="button" class="btn btn-outline-primary">Film
+		<button type="button" class="btn btn-outline-primary btn-block btn-lg">Film
 			Lookup</button>
 	</a>
 	<a href="filmCreate.do">
-		<button type="button" class="btn btn-outline-primary">Add A Film</button>
+		<button type="button" class="btn btn-outline-primary btn-block btn-lg">Add A Film</button>
 	</a>
 
 
