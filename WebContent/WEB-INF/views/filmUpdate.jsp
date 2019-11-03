@@ -43,9 +43,15 @@
 							for="releaseYear">Release Year</label> <input type="text"
 							name="releaseYear" class="form-control"
 							value="${film.releaseYear}"> <br> <label
-							for="languageId">Language</label> <input type="text"
-							name="languageId" class="form-control" value="${film.languageId}">
-						<br> <label for="rentalDuration">Rental Duration</label> <input
+							for="languageId">Language ID</label> <select class="form-control"
+							id="languageId" name="languageId">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select> <br> <label for="rentalDuration">Rental Duration</label> <input
 							type="text" name="rentalDuration" class="form-control"
 							value="${film.rentalDuration}"> <br> <label
 							for="rentalRate">Rental Rate</label> <input type="text"
@@ -54,16 +60,21 @@
 							name="length" class="form-control" value="${film.length}">
 						<br> <label for="replacementCost">Replacement Cost</label> <input
 							type="text" name="replacementCost" class="form-control"
-							value="${film.replacementCost}"> <br> <label
-							for="rating">Rating</label> <input type="text" name="rating"
-							class="form-control" value="${film.rating}"> <br> <label
+							value="${film.replacementCost}"> <br> <label for="rating">Rating</label> <select
+							class="form-control" id="rating" name="rating">
+							<option>G</option>
+							<option>PG</option>
+							<option>PG13</option>
+							<option>R</option>
+							<option>NC17</option>
+						</select> <br> <label
 							for="specialFeatures">Special Features</label><select multiple
 							class="form-control" id="specialFeatures" name="specialFeatures">
 							<option>Trailers</option>
 							<option>Commentaries</option>
 							<option>Deleted Scenes</option>
 							<option>Behind the Scenes</option>
-							</select>					
+						</select>
 					</div>
 					<button type="submit"
 						class="btn btn-outline-warning btn-block btn-lg">Update

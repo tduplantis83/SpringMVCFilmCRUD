@@ -40,10 +40,15 @@
 							required="required"> <br> <label for="releaseYear">Release
 							Year</label> <input type="text" name="releaseYear" class="form-control"
 							placeholder="Release Year" required="required"> <br>
-						<label for="languageId">Language ID (1-6)</label> <input
-							type="text" name="languageId" class="form-control"
-							placeholder="Language ID Number (1-6)" required="required">
-						<br> <label for="rentalDuration">Rental Duration</label> <input
+						<label for="languageId">Language ID</label> <select
+							class="form-control" id="languageId" name="languageId" required="required">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select> <br> <label for="rentalDuration">Rental Duration</label> <input
 							type="text" name="rentalDuration" class="form-control"
 							placeholder="Rental Duration" required="required"> <br>
 						<label for="rentalRate">Rental Rate</label> <input type="text"
@@ -55,12 +60,22 @@
 							for="replacementCost">Replacement Cost</label> <input type="text"
 							name="replacementCost" class="form-control"
 							placeholder="Replacement Cost" required="required"> <br>
-						<label for="rating">Rating</label> <input type="text"
-							name="rating" class="form-control" placeholder="Rating"
-							required="required"> <br> <label
-							for="specialFeatures">Special Features</label> <input type="text"
-							name="specialFeatures" class="form-control"
-							placeholder="Special Features" required="required">
+						<label for="rating">Rating</label> <select
+							class="form-control" id="rating" name="rating" required="required">
+							<option>G</option>
+							<option>PG</option>
+							<option>PG13</option>
+							<option>R</option>
+							<option>NC17</option>
+						</select> <br> <label
+							for="specialFeatures">Special Features</label> <select multiple
+							class="form-control" id="specialFeatures" name="specialFeatures"
+							required="required">
+							<option>Trailers</option>
+							<option>Commentaries</option>
+							<option>Deleted Scenes</option>
+							<option>Behind the Scenes</option>
+						</select>
 					</div>
 					<button type="submit" class="btn btn-primary btn-block btn-lg">Create</button>
 				</form:form>
