@@ -26,7 +26,8 @@ public class Controllers {
 		mv.setViewName("WEB-INF/views/home.jsp");
 		return mv;
 	}
-
+	
+	//films
 	@RequestMapping(path = "filmLookup.do")
 	public ModelAndView filmLookup() {
 		ModelAndView mv = new ModelAndView();
@@ -80,7 +81,8 @@ public class Controllers {
 			filmResult = dao.createFilm(film);
 		if (!filmResult.equals(null)) {
 			System.out.println(filmResult.allDetails());
-			f.add(filmResult);
+//			f.add(filmResult);
+			f.add(dao.findFilmById(filmResult.getId()));
 			mv.addObject("film", f);
 			mv.addObject("createStatus", false);
 			mv.setViewName("WEB-INF/views/filmResult.jsp");
@@ -116,7 +118,8 @@ public class Controllers {
 		System.out.println(film.allDetails());
 		List<Film> f = new ArrayList<>();
 		if (dao.updateFilm(film)) {
-			f.add(film);
+//			f.add(film);
+			f.add(dao.findFilmById(film.getId()));
 			mv.addObject("film", f);
 			mv.addObject("updateStatus", true);
 			mv.setViewName("WEB-INF/views/filmResult.jsp");
