@@ -73,7 +73,7 @@
 						<tfoot>
 							<tr>
 								<c:choose>
-									<c:when test="${f.id < 1000 }">
+									<c:when test="${f.id < 1001 }">
 										<td colspan="5"></td>
 										<td colspan="3"><form action="filmUpdate.do" method="get">
 												<button class="btn btn-outline-warning btn-block btn-lg" disabled>Update
