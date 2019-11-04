@@ -13,12 +13,12 @@
 	crossorigin="anonymous">
 <title>Update Film</title>
 </head>
-<body>
+<body style="background-color: lightgray">
 	<div class="container">
 		<div class="row">
 			<div class="col-4"></div>
 			<div class="col-4">
-				<h1>Update this Film</h1>
+				<h1 style="color: red">Update this Film</h1>
 				<c:choose>
 					<c:when test="${updateStatus}">
 						<h2>Film Update Failed!</h2>
