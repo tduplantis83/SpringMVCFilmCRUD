@@ -41,7 +41,7 @@
 							required="required"> <br> <label for="releaseYear">Release
 							Year</label> <input type="text" name="releaseYear" class="form-control"
 							placeholder="Release Year" required="required"> <br>
-						<label for="languageId">Language ID</label> <select
+						<label for="languageId">Language Id</label> <select
 							class="form-control" id="languageId" name="languageId" required="required">
 							<option>1</option>
 							<option>2</option>

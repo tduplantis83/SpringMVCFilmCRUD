@@ -1,6 +1,7 @@
 package com.skilldistillery.film.entities;
 
 import java.util.*;
+
 //test comment
 public class Film {
 	private int id;
@@ -17,7 +18,7 @@ public class Film {
 	private String specialFeatures;
 	private String filmCategory;
 	private List<Actor> cast = new ArrayList<>();
-	private Map <String, Integer> conditionCount = new HashMap<>();
+	private Map<String, Integer> conditionCount = new HashMap<>();
 
 	public Film() {
 
@@ -81,7 +82,7 @@ public class Film {
 	public void setLanguageId(int languageId) {
 		this.languageId = languageId;
 	}
-
+	
 	public String getLanguage() {
 		return language;
 	}
@@ -301,4 +302,3 @@ public class Film {
 	}
 
 }
-

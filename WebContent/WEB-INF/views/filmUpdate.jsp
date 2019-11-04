@@ -16,10 +16,10 @@
 
 <body>
 	<div class="container">
-		
+
 		<body style="background-color: lightgray">
 			<div class="container">
-				
+
 				<div class="row">
 					<div class="col-4"></div>
 					<div class="col-4">
@@ -48,8 +48,8 @@
 									for="releaseYear">Release Year</label> <input type="text"
 									name="releaseYear" class="form-control"
 									value="${film.releaseYear}"> <br> <label
-									for="languageId">Language ID</label> <select
-									class="form-control" id="languageId" name="languageId">
+									for="languageId">Language ID</label> <select class="form-control"
+									id="languageId" name="languageId">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
