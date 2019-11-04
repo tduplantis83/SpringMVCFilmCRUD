@@ -41,7 +41,7 @@ updateFilm(): This method allows the user to update an existing film in the data
 There are controller methods for mapping each aspect of the program to their appropriate pages and methods.
 The following are each page of the program:
 
-filmCrate.jsp: filmCrate page displays a form for each of the films attributes. The user is required to enter all data in crating a film so the database does not have incomplete data. The film is then added to the database.
+filmCreate.jsp: filmCrate page displays a form for each of the films attributes. The user is required to enter all data in crating a film so the database does not have incomplete data. The film is then added to the database.
 
 filmDelete.jsp: filmDelete removes a film from the database. Only films created by the user have the option to delete.
 
@@ -55,4 +55,4 @@ filmResult.jsp: This page displays all information about a film in a table. If t
 
 filmUpdate.jsp: filmUpdate allows the user to change any field they choose for a film.
 
-home.jsp: The homepage contains two bootstrap buttons which map to filmLookup.jsp(Film Lookup) and filmCrate.jsp(Add a Film).
+home.jsp: The homepage contains two bootstrap buttons which map to filmLookup.jsp(Film Lookup) and filmCreate.jsp(Add a Film).
