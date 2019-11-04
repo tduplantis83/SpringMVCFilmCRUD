@@ -12,13 +12,13 @@
 	crossorigin="anonymous">
 <title>Delete Film</title>
 </head>
-<body>
+<body style="background-color: lightgray">
 
 	<div class="container">
 		<div class="row">
 			<div class="col-4"></div>
 			<div class="col-4">
-				<h1>Delete this Film</h1>
+				<h1 style="color: red">Delete this Film</h1>
 				<c:choose>
 					<c:when test="${deleteStatus}">
 						<h2>Film Delete Failed!</h2>

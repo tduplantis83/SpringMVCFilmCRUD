@@ -12,12 +12,12 @@
 	crossorigin="anonymous">
 <title>Create New Film</title>
 </head>
-<body>
+<body style="background-color: lightgray">
 	<div class="container">
 		<div class="row">
 			<div class="col-4"></div>
 			<div class="col-4">
-				<h1>Create a New Film</h1>
+				<h1 style="color: red">Create a New Film</h1>
 				<c:choose>
 					<c:when test="${createStatus}">
 						<h2>Film Creation Failed!</h2>
