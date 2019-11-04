@@ -46,7 +46,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 						 * "inner join category on category.id = fc.category_id " + "where film.id = ?")
 						 */
 						.prepareStatement(
-								"SELECT film.*, language.name, category.name as categoryName from film inner join language on film.language_id = language.id left join film_category fc on fc.film_id = film.id left join category on category.id = fc.category_id where film.id = ?");) {
+								"SELECT film.*, language.name, category.name as categoryName from film left join language on film.language_id = language.id left join film_category fc on fc.film_id = film.id left join category on category.id = fc.category_id where film.id = ?");) {
 			stmt.setInt(1, filmId);
 
 			try (ResultSet rs = stmt.executeQuery();) {
@@ -201,9 +201,9 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		try (Connection conn = DriverManager.getConnection(URL, userPass, userPass);
 				PreparedStatement stmt = conn
 						.prepareStatement("SELECT film.*, language.name, category.name as categoryName " + "from film "
-								+ "inner join language on film.language_id = language.id "
-								+ "inner join film_category fc on fc.film_id = film.id "
-								+ "inner join category on category.id = fc.category_id "
+								+ "left join language on film.language_id = language.id "
+								+ "left join film_category fc on fc.film_id = film.id "
+								+ "left join category on category.id = fc.category_id "
 								+ "where film.title like ? or film.description like ?");) {
 			stmt.setString(1, "%" + keyword + "%");
 			stmt.setString(2, "%" + keyword + "%");
@@ -255,7 +255,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		// automatically closes connections
 		try (Connection conn = DriverManager.getConnection(URL, userPass, userPass);
 				PreparedStatement stmt = conn.prepareStatement(
-						"Select coalesce(i.media_condition, NULL, 'Unknown') as ItemCondition, count(IFNULL(i.media_condition, 1)) as NumInInventoryPerMediaCondition from film inner join language on film.language_id = language.id inner join film_category fc on fc.film_id = film.id inner join category on category.id = fc.category_id inner join inventory_item i on i.film_id = film.id where film.id = ? group by i.media_condition");) {
+						"Select coalesce(i.media_condition, NULL, 'Unknown') as ItemCondition, count(IFNULL(i.media_condition, 1)) as NumInInventoryPerMediaCondition from film left join language on film.language_id = language.id left join film_category fc on fc.film_id = film.id left join category on category.id = fc.category_id left join inventory_item i on i.film_id = film.id where film.id = ? group by i.media_condition");) {
 			stmt.setInt(1, filmId);
 
 			try (ResultSet rs = stmt.executeQuery();) {
