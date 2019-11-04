@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+h1 {
+	color: red;
+	text-align: center;
+	padding-top: 15%;
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+body {
+	background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url("filmStrip.jpg");
+	background-repeat: repeat;
+	background-size: contain;
+	
+}
+
