@@ -45,7 +45,7 @@
 							name="releaseYear" class="form-control"
 							value="${film.releaseYear}" readonly> <br> <label
 							for="languageId">Language</label> <input type="text"
-							name="languageId" class="form-control" value="${film.language}" readonly>
+							name="languageId" class="form-control" value="${film.languageId}" readonly>
 						<br> <label for="rentalDuration">Rental Duration</label> <input
 							type="text" name="rentalDuration" class="form-control"
 							value="${film.rentalDuration}" readonly> <br> <label
